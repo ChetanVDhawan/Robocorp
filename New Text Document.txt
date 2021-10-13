@@ -1,5 +1,0 @@
-{
-    "mysecrets": {
-      "whowrotethis": "Joerg"
-    }
-  }
