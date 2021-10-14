@@ -17,6 +17,7 @@ Library    OperatingSystem
 *** Variables ***
 ${pdf_folder}=        ${CURDIR}${/}pdf_files${/}
 ${img_folder}=        ${CURDIR}${/}image_files${/}
+${output_folder}=     ${CURDIR}${/}output${/}
 ${zip_file}=          ${CURDIR}${/}output${/}pdf_archive.zip
 
 *** Keywords ***
@@ -130,7 +131,9 @@ Get Data From Our Vault
     Log To Console          Getting Secret from our Vault Ended
 
 Clean Folder
-    
+    Create Directory    ${img_folder}
+    Create Directory    ${pdf_folder}
+    Create Directory    ${output_folder}
     Empty Directory     ${img_folder}
     Empty Directory     ${pdf_folder}
 
