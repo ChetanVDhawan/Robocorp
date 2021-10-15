@@ -21,6 +21,12 @@ ${output_folder}=     ${CURDIR}${/}output${/}
 ${zip_file}=          ${CURDIR}${/}output${/}pdf_archive.zip
 
 *** Keywords ***
+Input from Dialog
+    Add heading     Information
+    Add text input    name_id    label=Enter your Name
+    ${result}=    Run dialog
+    Log To Console     Hello ${result.name_id}
+    
 Open Website and Login
     Log To Console    Open Browser and Launch Website Started
     Open Available Browser    https://robotsparebinindustries.com/#/robot-order
@@ -139,6 +145,7 @@ Clean Folder
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
+    Input from Dialog
     Clean Folder
     Get Data From Our Vault
     Open Website and Login
